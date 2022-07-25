@@ -11,6 +11,7 @@ pipeline {
       }
       steps {
             withEnv(["HOME=${env.WORKSPACE}"]) {
+                sh "apt-get update"
                 sh "pip install -r requirements.txt --user"
             }
       }
