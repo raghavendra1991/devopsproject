@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip install --no-cache-dir'
+        sh 'python install pip'
         sh 'pip install requirements.txt'
       }
     }
