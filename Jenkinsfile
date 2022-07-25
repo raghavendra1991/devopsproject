@@ -10,9 +10,10 @@ pipeline {
           socks_proxy = 'socks://127.0.0.1:3128/'
       }
       steps {
-        sh 'pip install -r requirements.txt'
-      }
-    }
+        withEnv(["HOME=${env.WORKSPACE}"]) {
+           sh "pip install -r requirements.txt --user"
+        }
+     }
     stage('test') {
       steps {
         sh 'python3 test.py'
