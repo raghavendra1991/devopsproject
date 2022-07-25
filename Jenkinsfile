@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'python3 -m venv tutorial-env'
-        sh 'python3 -m pip install -r requirements.txt'
+        sh 'python -m pip install -r requirements.txt --user --no-cache'
       }
     }
     stage('test') {
