@@ -10,7 +10,7 @@ pipeline {
           socks_proxy = 'socks://127.0.0.1:3128/'
       }
       steps {
-        sh 'pip install --upgrade pip'
+        sh 'pip install --upgrade pip --user --no-cache'
         sh 'pip install requirements.txt --user --no-cache'
       }
     }
