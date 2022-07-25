@@ -9,6 +9,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        sh 'pip install --user duvva'
         sh 'pip install --upgrade pip'
         sh 'pip install -r requirements.txt'
       }
