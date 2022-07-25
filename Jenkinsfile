@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.7.2' } }
+  agent { docker { image 'python:latest' } }
   
   stages {
     stage('build') {
@@ -10,8 +10,7 @@ pipeline {
           socks_proxy = 'socks://127.0.0.1:3128/'
       }
       steps {
-        sh 'pip install --upgrade pip --user --no-cache'
-        sh 'pip install requirements.txt --user --no-cache'
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('test') {
