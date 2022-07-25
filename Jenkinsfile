@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'image:1.0' } }
+  agent { docker { image 'python:3.7-alpine' } }
   environment {
         http_proxy = 'http://127.0.0.1:3128/'
         https_proxy = 'http://127.0.0.1:3128/'
@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip install --upgrade pip'
-        sh 'pip install requirements.txt'
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('test') {
