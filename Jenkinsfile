@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip install --user duvva'
+        sh 'python3 -m venv tutorial-env'
         sh 'pip install --upgrade pip'
         sh 'pip install -r requirements.txt'
       }
